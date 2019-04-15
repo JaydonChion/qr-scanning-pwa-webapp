@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js')
+      .then(() => console.log("Service Worker Registered"))
+      .catch(e => console.log(e));
+  }
+
+  $(document).ready(function(){
+
+      $("#login").click(function(){
+
+          window.location.href = "index.html"
+
+
+      });
+
+            $("#signup").click(function(){
+
+          window.location.href = "register.html"
+
+
+      });
+
+  });
+</script>
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <style type="text/css">
+    a{
+    margin-right: 10px;
+
+  }
+
+  .textDisplay{
+
+    font-size: 10px;
+    margin: 0 auto;
+  }
+
+  .labelButtonLeft{
+display: inline-block;
+margin-right: 10px;
+  }
+  .labelButtonRight{
+    display: inline-block;
+    margin-left: 10px;
+
+  }
+  </style>
+</head>
+<body>
+	<ons-page>
+  <div style="text-align: center; margin-top: 70%;">
+      <form action="reset.php" method="POST">
+    <p>
+      <ons-input id="phone" modifier="underbar" placeholder="Phone Number" type="tel" float></ons-input>
+    </p>
+    <div class="textDisplay">
+<!--     <a href="index.html">Log In</a><a href="register.html">Sign Up</a>
+ -->  
+    <p id="login" class="labelButtonLeft">Log In</p><p id="signup" class="labelButtonRight">Sign Up</p>
+
+
+</div>  
+    <p style="margin-top: 30px;">
+  <ons-button onclick="redirect()">Reset</ons-button>
+    </p>
+  </form>
+  </div>
+</ons-page>
+
+<script type="text/javascript">
+  
+  function redirect(){
+ 
+
+
+     var phonenum = document.getElementById('phone').value;
+
+  if (phonenum === '') {
+    ons.notification.alert('Please key in Phone Number');
+  } else {
+
+    form = document.forms[0] //assuming only form.
+  form.submit();
+     alert('Please check your sms');
+    window.location.href="index.html";
+    //send query to database
+    // ons.notification.alert('Incorrect username or password.');
+  }
+
+
+  }
+
+
+</script>
+</body>
+</html>

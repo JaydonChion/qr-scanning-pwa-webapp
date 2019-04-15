@@ -1,0 +1,386 @@
+.navbar {
+    background-color: #000;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 3000;
+}
+/* Style the links inside the navigation bar */
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* Change the color of links on hover */
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Add a green background color to the active link */
+
+.navbar a.active {
+    background-color: #4caf50;
+    color: white;
+}
+/* Hide the link that should open and close the navbar on small screens */
+
+.navbar .icon {
+    display: none;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    border: 3px solid #f1f1f1;
+    z-index: 1001;
+    
+
+}
+/* Add styles to the form container */
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    height:330px;
+    overflow-y:auto;
+}
+/* Full-width input fields */
+
+.form-container input[type="text"],
+input[type="number"] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 10px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+.form-container input[type="text"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px 20px;
+    max-width: 80px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.form-container .cancel {
+    background-color: blue;
+}
+
+.form-container .delete {
+    background-color: red;
+}
+
+.centerVideo {
+    display: block;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    max-height: 300px;
+    max-width: 60%;
+    margin-top: 20px;
+}
+
+.centerQR {
+    display: none;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    max-height: 300px;
+    max-width: 60%;
+    margin-top: 60px;
+}
+
+b {
+    margin: 0 auto;
+}
+
+hr {
+    margin-top: 32px;
+}
+
+.bottom1 {
+    margin-bottom: 16px;
+    margin: 0 auto;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+    /*            display: inline-flex;
+*/
+}
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+/* Add some padding inside the card container */
+
+.container {
+    padding: 2px 16px;
+}
+
+.semi-square {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.wrap {
+    right: 0;
+    width: 0 auto;
+    left: 0;
+    margin: 16px auto;
+}
+/* select starting stylings ------------------------------*/
+
+.select {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    position: relative;
+    width: 350px;
+    margin-top: 20px;
+}
+
+.select-text {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 200px;
+    padding: 10px 10px 10px 0;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+/* Remove focus */
+
+.select-text:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+/* Use custom arrow */
+
+.select .select-text {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.select:after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+/* LABEL ======================================= */
+
+.select-label {
+    color: rgba(0, 0, 0, 0.26);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+}
+/* active state */
+
+.select-text:focus ~ .select-label,
+.select-text:valid ~ .select-label {
+    color: #000;
+    top: -5px;
+    transition: 0.2s ease all;
+    font-size: 14px;
+}
+/* BOTTOM BARS ================================= */
+
+.select-bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.select-bar:before,
+.select-bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #228b22;
+    transition: 0.2s ease all;
+}
+
+.select-bar:before {
+    left: 50%;
+}
+
+.select-bar:after {
+    right: 50%;
+}
+/* active state */
+
+.select-text:focus ~ .select-bar:before,
+.select-text:focus ~ .select-bar:after {
+    width: 50%;
+}
+/* HIGHLIGHTER ================================== */
+
+.select-highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.centerdiv {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    left: 50%;
+}
+.centerText {
+    margin: auto;
+    width: 50%;
+    left: 50%;
+}
+.centerText2 {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+    /*margin: auto;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    left: 50%;
+}
+.center {
+    margin: 0 auto;
+}
+
+.selectDivShow {
+    display: block;
+}
+
+/*display table
+*/
+
+.showtable {
+    font-size: 15px;
+    color: #343d44;
+    font-family: "segoe-ui", "open-sans", tahoma, arial;
+    padding: 0;
+    margin: 0;
+}
+table {
+    margin: auto;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
+    font-size: 12px;
+    width: 100%;
+}
+
+h1 {
+    margin: 25px auto 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+table td {
+    transition: all 0.5s;
+}
+
+/* Table */
+.data-table {
+    border-collapse: collapse;
+    font-size: 14px;
+/*    min-width: 537px;
+*/    width: 100%;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #e1edff;
+    padding: 7px 5px;
+    text-align: center;
+}
+.data-table caption {
+    margin: 7px;
+}
+
+/* Table Header */
+.data-table thead th {
+    background-color: #508abb;
+    color: #ffffff;
+    border-color: #6ea1cc !important;
+    text-transform: uppercase;
+}
+
+/* Table Body */
+.data-table tbody td {
+    color: #353535;
+}
+.data-table tbody td:first-child,
+.data-table tbody td:nth-child(4),
+.data-table tbody td:last-child {
+    text-align: right;
+}
+
+.data-table tbody tr:nth-child(odd) td {
+    background-color: #f4fbff;
+}
+.data-table tbody tr:hover td {
+    background-color: #ffffa2;
+    border-color: #ffff0f;
+}
+
+/* Table Footer */
+.data-table tfoot th {
+    background-color: #e5f5ff;
+    text-align: right;
+}
+.data-table tfoot th:first-child {
+    text-align: left;
+}
+.data-table tbody td:empty {
+    background-color: #ffcccc;
+}
+
+.link{
+    text-decoration:none;
+
+}
